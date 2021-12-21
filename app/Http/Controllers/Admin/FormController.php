@@ -279,7 +279,16 @@ class FormController extends Controller
             $sponsor_letter= null;
 
         }
-         
+        if($request->hasFile('gov_exp_letter') && $request->file('gov_exp_letter')->isValid()){
+            $file = $request->file('gov_exp_letter');
+            $gov_exp_letter= uniqid().'_'.$file->getClientOriginalName();
+            $file->storeAs('public/uploads/gov_exp_letter',$gov_exp_letter);
+        }else{
+            //if statement checks if file is a file and is valid, otherwise no file to upload
+            $gov_exp_letter= null;
+
+        }
+
         $data=[
             'faculty' => $request->faculty,
             'campus' => $request->campus,
@@ -340,6 +349,7 @@ class FormController extends Controller
             'citizenship' => $citizenship,
             'community_certificate' => $community_certificate,
             'sponsor_letter' => $sponsor_letter,
+            'gov_exp_letter' => $gov_exp_letter,
             'pid' => substr(md5(time()), 0, 16),
             'payment_method' => $request->payment_method,
             'disable_status' => $request->disable_status,
@@ -347,7 +357,11 @@ class FormController extends Controller
             'disable_no' => $request->disable_no,
             'disable_description' => $request->disable_description,
             'martyr_status' => $request->martyr_status,
-            'martyr_no' => $request->martyr_no
+            'martyr_no' => $request->martyr_no,
+            'quota' => json_encode($request->quota),
+            'full_paying_quota' => $request->full_paying_quota,
+            'scholarship_quota' => $request->scholarship_quota,
+            'gov_inclusion_quota' => $request->gov_inclusion_quota,
         ];
         // dd($data);
         $form = Form::create($data
@@ -463,7 +477,11 @@ class FormController extends Controller
             'disable_no' => $request->disable_no,
             'disable_description' => $request->disable_description,
             'martyr_status' => $request->martyr_status,
-            'martyr_no' => $request->martyr_no
+            'martyr_no' => $request->martyr_no,
+            'quota' => json_encode($request->quota),
+            'full_paying_quota' => $request->full_paying_quota,
+            'scholarship_quota' => $request->scholarship_quota,
+            'gov_inclusion_quota' => $request->gov_inclusion_quota,
         ];
         if($r=='User'){
             $data['is_verified'] = 1;

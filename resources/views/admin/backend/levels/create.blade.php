@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label class="" for="faculties">{{ trans('cruds.level.fields.faculty') }}</label>
                 
-                <select class="form-control select2 {{ $errors->has('faculties') ? 'is-invalid' : '' }}" name="faculty_id[]" id="faculties" multiple required>                 
+                <select class="form-control select2 {{ $errors->has('faculties') ? 'is-invalid' : '' }}" name="faculty_id[]" id="faculties" multiple>                 
                     <option value="">Select a faculty...</option>
                     @foreach($faculties as $id => $faculty)
                         <option value="{{ $id }}" {{ in_array($id, old('faculty', [])) ? 'selected' : '' }}>{{ $faculty }}</option>

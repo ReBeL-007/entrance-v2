@@ -31,7 +31,7 @@ class AddColumnsToFormTable extends Migration
             $table->string('ward')->nullable();
             $table->string('contact')->nullable();
             $table->string('contact_address')->nullable();
-            $table->string('email')->nullable();
+            $table->string('priority')->nullable();
             $table->string('board')->nullable();
             $table->string('passed_year')->nullable();
             $table->string('roll_no')->nullable();

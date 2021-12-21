@@ -19,6 +19,7 @@ class AddQuotaInForm extends Migration
             $table->string('full_paying_quota')->nullable();
             $table->string('gov_inclusion_quota')->nullable();
             $table->string('scholarship_quota')->nullable();
+            $table->string('gov_exp_letter')->nullable();
         });
     }
 

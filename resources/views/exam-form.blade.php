@@ -95,7 +95,7 @@
                 </div>
             </div>
            {{-- permission  --}}
-           <div class="permission field" >
+           <div class="permission field faculty-agriculture" >
                 <div class="row engineer">
                     <div class="col-md-6">
                          <p>I hereby request for the permission to appear in the entrance examination for Faculty of </p>
@@ -387,7 +387,7 @@
             </div>
             {{-- examination --}}
         <h4 class="ui dividing header">Previous Academic Records</h4>
-        <label class="required">Bachelor</label>
+        <label class="required">(+2 / Bachelor / Masters)</label>
         <div class="fields">
             <div class="seven wide field">
                 <input class=" {{ $errors->has('board') ? 'is-invalid' : '' }}" type="text" name="board[]" placeholder="Board or University" required>
@@ -630,6 +630,15 @@
                 <input class=" {{ $errors->has('sponsor_letter') ? 'is-invalid' : '' }}" type="file" name="sponsor_letter" accept="image/*" maxlength="" >
                 @if($errors->has('sponsor_letter'))
                 <span class="text-danger">{{ $errors->first('sponsor_letter') }}</span>
+                @endif
+                <span class="text-danger"> Maximum File size: 512KB</span> <br>
+                <span class="text-danger"> Acceptable format: jpeg, png</span>
+            </div>
+            <div class="six wide field">
+                <p class="" style="font-size:larger;">Government Experience Letter</p>
+                <input class=" {{ $errors->has('gov_exp_letter') ? 'is-invalid' : '' }}" type="file" name="gov_exp_letter" accept="image/*" maxlength="" >
+                @if($errors->has('gov_exp_letter'))
+                <span class="text-danger">{{ $errors->first('gov_exp_letter') }}</span>
                 @endif
                 <span class="text-danger"> Maximum File size: 512KB</span> <br>
                 <span class="text-danger"> Acceptable format: jpeg, png</span>
@@ -937,8 +946,46 @@
                 var selected_id = $(this).val();
                 var faculty_id = $('#faculties').val();
 
-                if(faculty_id==5 && selected_id==1) { 
+                if(faculty_id==7 && selected_id==1) {
                     $(".priority").remove();
+                    $(".quotas").remove();
+                    $(".hide-for-engineer").show();  
+                    $("#programs").attr("required",true) 
+                    $.ajax({
+                        cache: false
+                        , url: "{{ route('admin.courses.getspecificcourses') }}"
+                        , type: 'get'
+                        , data: {
+                            levelId: selected_id
+                            , facultyId: faculty_id
+                        , }
+                        , dataType: 'json'
+                        , beforeSend: function(request) {
+                            return request.setRequestHeader('X-CSRF-Token', $("meta[name='csrf-token']").attr('content'));
+                        }
+                        , success: function(data) {
+                            // console.log(data);
+                            var len = data.length;
+                            $("#programs").empty();
+                            $programs = $("#programs").append("<option value=''>Select a program...</option>");
+                            for (var i = 0; i < len; i++) {
+                                var id = data[i]['id'];
+                                var name = data[i]['name'];
+                                $programs.append("<option value='" + id + "'>" + name + "</option>");
+                            }
+                        }
+                    });
+                    $(".faculty-agriculture").append(`
+                                            <div class="quotas" style="overflow-x: auto; margin: 2rem;">
+                                                <p style="font-style:italic">Category of applicant (Select any one or both):</p>
+                                                  <label class="d-flex align-items-center"><input type="checkbox" class="quota" name="quota[]" id="full_paying_quota" value="full_paying">Full Paying</label>
+                                                  <label class="d-flex align-items-center"><input type="checkbox" class="quota" name="quota[]" id="scholarship_quota" value="scholarship">Scholarship</label>
+                                            </div>
+                                `);
+                }
+                else if(faculty_id==5 && selected_id==1) { 
+                    $(".priority").remove();
+                    $(".quotas").remove();
                     $(".engineer").append(`<div class="priority">
                                             <div class="" style="overflow-x: auto; margin: 2rem;">
                                             <h5 style="font-weight: bold">Priority</h5>
@@ -1001,6 +1048,7 @@
                     $("#programs").removeAttr("required")                             
                 } else if(faculty_id==5 && selected_id==2) { 
                     $(".priority").remove(); 
+                    $(".quotas").remove();
                     $(".engineer").append(`<div class="priority">
                                             <div class="" style="overflow-x: auto; margin: 2rem;">
                                             <h5 style="font-weight: bold">Priority</h5>
@@ -1055,7 +1103,9 @@
                     $(".hide-for-engineer").hide(); 
                     $("#programs").removeAttr("required")                             
                 } else {
-                    $(".hide-for-engineer").show();  
+                    $(".hide-for-engineer").show(); 
+                    $(".priority").remove();
+                    $(".quotas").remove(); 
                     $("#programs").attr("required",true)                             
                     $.ajax({
                         cache: false
@@ -1071,7 +1121,6 @@
                         }
                         , success: function(data) {
                             // console.log(data);
-                            $(".priority").remove();
                             var len = data.length;
                             $("#programs").empty();
                             $programs = $("#programs").append("<option value=''>Select a program...</option>");
@@ -1083,6 +1132,60 @@
                         }
                     });
                 }
+            });
+
+            $(document).on('change', '.quota', function() {
+                var quota = $(this).attr('id');
+                if(quota === "full_paying_quota") {
+                    if ($('#full_paying_quota').is(':checked')) {
+                        $('.quotas').append(`
+                            <div class="full_paying_quotas" style="overflow-x: auto; margin: 2rem;">
+                                <p style="font-style:italic">If 'Full Paying' category, please choose a suitable option below (select any one):</p>
+                                <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="government_inclusion" value="government_inclusion" required>Government Inclusion </label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="karnali_province" value="karnali_province">Karnali province </label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="sponsorship" value="sponsorship">Sponsorship </label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="foreign_citizen" value="foreign_citizen">Foreign Citizen </label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="free_open_category" value="free_open_category">Free Open Category </label>
+                            </div>
+                        `);
+                    } else {
+                        $('.full_paying_quotas').remove();
+                    }
+                } else if(quota === "scholarship_quota") {
+                    if ($('#scholarship_quota').is(':checked')) {
+                        $('.quotas').append(`
+                            <div class="scholarship_quotas" style="overflow-x: auto; margin: 2rem;">
+                                <p style="font-style:italic">If 'Scholarship' category, please choose a suitable option below (select any one):</p>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="female" value="female" required>Female </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="dalit" value="dalit">Dalit </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="janajati" value="janajati">Janajati </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="terai" value="terai">Tarai/Madhesi </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="backward_society" value="backward_society">Backward Society </label>
+                            </div>
+                        `);
+                    } else {
+                        $('.scholarship_quotas').remove();
+                    }
+                }
+            });
+
+            $(document).on('change','.full_paying_quota', function() {
+                var full_paying_quota = $(this).attr('id');
+                    if ($('#government_inclusion').is(':checked')) {
+                        $('.full_paying_quotas').append(`
+                            <div class="government_inclusions" style="overflow-x: auto; margin: 2rem;">
+                                <p style="font-style:italic">If 'Full Paying and Government Inclusion' category, please choose a suitable option below (select any one):</p>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="female" value="female" required>Female </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="dalit" value="dalit">Dalit </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="janajati" value="janajati">Janajati </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="terai" value="terai">Tarai/Madhesi </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="remote_district" value="remote_district">Remote District </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="backward_society" value="backward_society">Backward Society </label>
+                            </div>
+                        `);
+                    } else {
+                        $('.government_inclusions').remove();
+                    }
             });
 
             // if changes is made on programs selection
