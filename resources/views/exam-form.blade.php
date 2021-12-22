@@ -1159,7 +1159,7 @@
                                 <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="female" value="female" required>Female </label>
                                 <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="dalit" value="dalit">Dalit </label>
                                 <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="janajati" value="janajati">Janajati </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="terai" value="terai">Tarai/Madhesi </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="remote_district" value="remote_district">Remote District </label>
                                 <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="backward_society" value="backward_society">Backward Society </label>
                             </div>
                         `);
