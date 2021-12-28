@@ -527,7 +527,7 @@
         $divison = json_decode($data->division);
         @endphp
         <h4 class="ui dividing header">Previous Academic Records</h4>
-        <label class="required">SLC/SEE</label>
+        <label class="required">Recent Degree</label>
         <div class="fields">
             <div class="seven wide field">
                 <input class=" {{ $errors->has('board') ? 'is-invalid' : '' }}" type="text" name="board[]" placeholder="Board or University" value="{{ $boards[0] }}" required>
@@ -559,9 +559,10 @@
             </div>            
         </div>
         <!-- <div class="fields"> -->
-            @if($data->see_certificate)<h6><a href="/storage/uploads/see_certificate/{{ $data->see_certificate }}" download="{{ $data->see_certificate }}">Click here to download SEE character certificate</a></h6>@endif
-            @if($data->see_marksheet)<h6><a href="/storage/uploads/see_marksheet/{{ $data->see_marksheet }}" download="{{ $data->see_marksheet }}">Click here to download SEE marksheet</a></h6>@endif
-            @if($data->see_provisional)<h6><a href="/storage/uploads/see_provisional/{{ $data->see_provisional }}" download="{{ $data->see_provisional }}">Click here to download SEE prvisional certificate</a></h6>@endif
+            @if($data->see_certificate)<h6><a href="/storage/uploads/see_certificate/{{ $data->see_certificate }}" download="{{ $data->see_certificate }}">Click here to download recent character certificate</a></h6>@endif
+            @if($data->see_marksheet)<h6><a href="/storage/uploads/see_marksheet/{{ $data->see_marksheet }}" download="{{ $data->see_marksheet }}">Click here to download recent marksheet</a></h6>@endif
+            @if($data->see_provisional)<h6><a href="/storage/uploads/see_provisional/{{ $data->see_provisional }}" download="{{ $data->see_provisional }}">Click here to download recent provisional certificate</a></h6>@endif
+            @if($data->gov_exp_letter)<h6><a href="/storage/uploads/gov_exp_letter/{{ $data->gov_exp_letter }}" download="{{ $data->gov_exp_letter }}">Click here to download equivalent certificate</a></h6>@endif
         <!-- </div> -->
 
         <label class="">Intermediate/+2</label>
@@ -637,10 +638,9 @@
 
         <label class="">Other Documents</label>
         
-            @if($data->citizenship)<h6><a href="/storage/uploads/citizenship/{{ $data->citizenship }}" download="{{ $data->citizenship }}">Click here to download citizenship</a></h6>@endif
-            @if($data->community_certificate)<h6><a href="/storage/uploads/community_certificate/{{ $data->community_certificate }}" download="{{ $data->community_certificate }}">Click here to download community certificate</a></h6>@endif
+            @if($data->citizenship)<h6><a href="/storage/uploads/citizenship/{{ $data->citizenship }}" download="{{ $data->citizenship }}">Click here to download citizenship / passport</a></h6>@endif
+            @if($data->community_certificate)<h6><a href="/storage/uploads/community_certificate/{{ $data->community_certificate }}" download="{{ $data->community_certificate }}">Click here to download other certificate</a></h6>@endif
             @if($data->sponsor_letter)<h6><a href="/storage/uploads/sponsor_letter/{{ $data->sponsor_letter }}" download="{{ $data->sponsor_letter }}">Click here to download sponsor letter</a></h6>@endif
-            @if($data->gov_exp_letter)<h6><a href="/storage/uploads/gov_exp_letter/{{ $data->gov_exp_letter }}" download="{{ $data->gov_exp_letter }}">Click here to download government experience letter</a></h6>@endif
 
         {{-- guardian's details --}}
         <h4 class="ui dividing header">Parent's/Guardian's Details</h4>

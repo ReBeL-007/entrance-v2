@@ -224,7 +224,7 @@
         </div>
         
         <div class="field">
-            <label class="required">Citizenship</label>
+            <label class="required">Citizenship / Passport(only for international students)</label>
             <input class=" {{ $errors->has('citizenship') ? 'is-invalid' : '' }}" type="file" name="citizenship" accept="image/*" maxlength="" required>
             @if($errors->has('citizenship'))
             <span class="text-danger">{{ $errors->first('citizenship') }}</span>
@@ -446,6 +446,15 @@
                 <span class="text-danger"> Maximum File size: 512KB</span> <br>
                 <span class="text-danger"> Acceptable format: jpeg, png</span>
             </div>
+            <div class="six wide field">
+                <p class="" style="font-size:larger;">Equivalent Certificate (In case of different University except MU)</p>
+                <input class=" {{ $errors->has('gov_exp_letter') ? 'is-invalid' : '' }}" type="file" name="gov_exp_letter" accept="image/*" maxlength="">
+                @if($errors->has('gov_exp_letter'))
+                <span class="text-danger">{{ $errors->first('gov_exp_letter') }}</span>
+                @endif
+                <span class="text-danger"> Maximum File size: 512KB</span> <br>
+                <span class="text-danger"> Acceptable format: jpeg, png</span>
+            </div>
         </div>
 
         <!--<label class="">Intermediate / +2</label>-->
@@ -616,16 +625,17 @@
         </div> -->
         <div class="fields">
             
-            <div class="six wide field">
-                <p class="" style="font-size:larger;">Letter from Community School (For SLC from Government School)</p>
-                <input class=" {{ $errors->has('community_certificate') ? 'is-invalid' : '' }}" type="file" name="community_certificate" accept="image/*" maxlength="" >
+            <div class="field">
+                <p class="" style="font-size:small;">Letter from Community School (For SLC from Government School) / Sponsor's Letter / Government Approval Letter / Letter From CDO office (for Dalit/Janajati/Tarai/Madhesi/Remote District/Backward Society)</p>
+                <input class=" {{ $errors->has('community_certificate') ? 'is-invalid' : '' }}" type="file" name="community_certificate" accept="image/*, application/pdf" maxlength="" >
                 @if($errors->has('community_certificate'))
                 <span class="text-danger">{{ $errors->first('community_certificate') }}</span>
                 @endif
                 <span class="text-danger"> Maximum File size: 512KB</span> <br>
-                <span class="text-danger"> Acceptable format: jpeg, png</span>
+                <span class="text-danger"> Acceptable format: jpeg, png, pdf</span><br>
+                <span class="text-danger"> Note: Please merge the documents if you have more than one documents.</span>
             </div>
-            <div class="six wide field">
+            <!-- <div class="six wide field">
                 <p class="" style="font-size:larger;">Sponsor's Letter</p>
                 <input class=" {{ $errors->has('sponsor_letter') ? 'is-invalid' : '' }}" type="file" name="sponsor_letter" accept="image/*" maxlength="" >
                 @if($errors->has('sponsor_letter'))
@@ -642,10 +652,10 @@
                 @endif
                 <span class="text-danger"> Maximum File size: 512KB</span> <br>
                 <span class="text-danger"> Acceptable format: jpeg, png</span>
-            </div>
+            </div> -->
         </div>
 
-        {{-- guardian's details --}}
+        <!-- guardian's details -->
         <h4 class="ui dividing header">Parent's/Guardian's Details</h4>
         <div class="parents-details field">
             <div class="row">
