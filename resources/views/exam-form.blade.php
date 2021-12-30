@@ -631,7 +631,7 @@
                 @if($errors->has('community_certificate'))
                 <span class="text-danger">{{ $errors->first('community_certificate') }}</span>
                 @endif
-                <span class="text-danger"> Maximum File size: 512KB</span> <br>
+                <span class="text-danger"> Maximum File size: 2MB</span> <br>
                 <span class="text-danger"> Acceptable format: jpeg, png, pdf</span><br>
                 <span class="text-danger"> Note: Please merge the documents if you have more than one documents.</span>
             </div>
