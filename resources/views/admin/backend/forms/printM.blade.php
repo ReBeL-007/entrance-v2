@@ -4608,7 +4608,7 @@
                 </svg>
                 <div id="Bachelor__Master__MPhil">
                 @if($form->faculty===5 && $form->level===1)
-                    @php
+                    {{--@php
                     $priority = json_decode($form->priority);
                     @endphp
                     @switch($priority[0])
@@ -4627,7 +4627,8 @@
                     @case( '9')
                         <span>B.E. Hydropower</span>
                     @break
-                    @endswitch
+                    @endswitch--}}
+                    <span>B.E </span>
                 @elseif($form->faculty===5 && $form->level===2)
                     <span>Masters</span>
                 @else

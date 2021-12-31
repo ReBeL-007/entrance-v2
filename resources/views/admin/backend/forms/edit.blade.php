@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 @if($data->faculty===5 && $data->level===1)
-                @php
+                {{--@php
                 $priority = json_decode($data->priority);
                 @endphp
                 <div class="priority">
@@ -186,7 +186,7 @@
                         </tbody>
                     </table>
                     </div>
-                </div>
+                </div>--}}
                 <div class="row">
                     <div class="col-md-12">
                     <p> . I have included all my credentials and information required for appearing in the examinations.</p>
@@ -527,6 +527,13 @@
         $divison = json_decode($data->division);
         @endphp
         <h4 class="ui dividing header">Previous Academic Records</h4>
+        <div class="row field">
+            <label class=" col-md-3 sex required">SEE/SLC from Government School ?</label>
+            <select class="col-md-1" name="dateOfBirth2" id="dateOfBirth2">
+                <option value="0" {{ ('0' == $data->dateOfBirth2) ? 'selected' : '' }}>No</option>
+                <option value="1" {{ ('1' == $data->dateOfBirth2) ? 'selected' : '' }}>Yes</option>
+            </select>        
+        </div>
         <label class="required">Recent Degree</label>
         <div class="fields">
             <div class="seven wide field">

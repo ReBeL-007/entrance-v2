@@ -95,7 +95,7 @@
                         </td>
                         <td>
                         @if($data->faculty===5 && $data->level===1)
-                            @php
+                            {{--@php
                             $priority = json_decode($data->priority);
                             @endphp
                             @switch($priority[0])
@@ -114,7 +114,8 @@
                             @case(9)
                                 B.E. Hydropower
                             @break
-                            @endswitch
+                            @endswitch--}}
+                            BE
                         @else
                             {{$data->course->name ?? ' '}}
                         @endif
