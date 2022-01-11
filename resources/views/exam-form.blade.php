@@ -999,7 +999,7 @@
                     $(".faculty-agriculture").append(`
                                             <div class="quotas" style="overflow-x: auto; margin: 2rem;">
                                                 <p style="font-style:italic">Category of applicant (Select any one or both):</p>
-                                                  <label class="d-flex align-items-center"><input type="checkbox" class="quota" name="quota[]" id="full_paying_quota" value="full_paying">Full Paying</label>
+                                                  <label class="d-flex align-items-center"><input type="checkbox" class="quota" name="quota[]" id="full_paying_quota" value="full_paying" required>Full Paying</label>
                                                   <label class="d-flex align-items-center"><input type="checkbox" class="quota" name="quota[]" id="scholarship_quota" value="scholarship">Scholarship</label>
                                             </div>
                                 `);
