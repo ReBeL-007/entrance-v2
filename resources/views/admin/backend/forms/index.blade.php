@@ -53,6 +53,12 @@
                             Name
                         </th>
                         <th>
+                            Email
+                        </th>
+                        <th>
+                            Contact
+                        </th>
+                        <th>
                             College
                         </th>
                         <th>
@@ -89,6 +95,12 @@
                         </td>
                         <td>
                             {{ $data->fname ?? '' }} {{ $data->mname ?? '' }} {{ $data->lname ?? '' }}
+                        </td>
+                        <td>
+                            {{ $data->contact_address ?? '' }}
+                        </td>
+                        <td>
+                            {{ $data->contact ?? '' }}
                         </td>
                         <td>
                             {{ $data->colleges->name ?? '' }}
