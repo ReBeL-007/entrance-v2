@@ -58,6 +58,25 @@
                         <th>
                             Contact
                         </th>
+
+                        @if(auth()->user()->name=='Central Campus of Agriculture and Forestry') 
+                        <th>
+                            Quota
+                        </th>
+                        
+                        <th>
+                            Full Paying Quota
+                        </th>
+                        
+                        <th>
+                            Gov Inclusion Quota
+                        </th>
+
+                        <th>
+                            Scholarship Quota
+                        </th>
+                        @endif
+
                         <th>
                             College
                         </th>
@@ -102,6 +121,23 @@
                         <td>
                             {{ $data->contact ?? '' }}
                         </td>
+                        @if(auth()->user()->name=='Central Campus of Agriculture and Forestry') 
+                        <td>
+                            {{ $data->quota ?? '' }}
+                        </td>
+                        
+                        <td>
+                            {{ $data->full_paying_quota ?? '' }}
+                        </td>
+                        
+                        <td>
+                            {{ $data->gov_inclusion_quota ?? '' }}
+                        </td>
+
+                        <td>
+                            {{ $data->scholarship_quota ?? '' }}
+                        </td>
+                        @endif
                         <td>
                             {{ $data->colleges->name ?? '' }}
                         </td>
