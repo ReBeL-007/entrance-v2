@@ -53,6 +53,15 @@
                             Name
                         </th>
                         <th>
+                            College
+                        </th>
+                        <th>
+                            Program
+                        </th>
+                        <th>
+                            District
+                        </th>
+                        <th>
                             Email
                         </th>
                         <th>
@@ -77,15 +86,6 @@
                         </th>
                         @endif
 
-                        <th>
-                            College
-                        </th>
-                        <th>
-                            Program
-                        </th>
-                        <th>
-                            District
-                        </th>
                         <th>
                             Gender
                         </th>
@@ -114,30 +114,7 @@
                         </td>
                         <td>
                             {{ $data->fname ?? '' }} {{ $data->mname ?? '' }} {{ $data->lname ?? '' }}
-                        </td>
-                        <td>
-                            {{ $data->contact_address ?? '' }}
-                        </td>
-                        <td>
-                            {{ $data->contact ?? '' }}
-                        </td>
-                        @if(auth()->user()->name=='Central Campus of Agriculture and Forestry') 
-                        <td>
-                            {{ $data->quota ?? '' }}
-                        </td>
-                        
-                        <td>
-                            {{ $data->full_paying_quota ?? '' }}
-                        </td>
-                        
-                        <td>
-                            {{ $data->gov_inclusion_quota ?? '' }}
-                        </td>
-
-                        <td>
-                            {{ $data->scholarship_quota ?? '' }}
-                        </td>
-                        @endif
+                        </td>                        
                         <td>
                             {{ $data->colleges->name ?? '' }}
                         </td>
@@ -171,6 +148,29 @@
                         <td>
                             {{ $data->district ?? '' }}
                         </td>
+                        <td>
+                            {{ $data->contact_address ?? '' }}
+                        </td>
+                        <td>
+                            {{ $data->contact ?? '' }}
+                        </td>
+                        @if(auth()->user()->name=='Central Campus of Agriculture and Forestry') 
+                        <td>
+                            {{ $data->quota ?? '' }}
+                        </td>
+                        
+                        <td>
+                            {{ $data->full_paying_quota ?? '' }}
+                        </td>
+                        
+                        <td>
+                            {{ $data->gov_inclusion_quota ?? '' }}
+                        </td>
+
+                        <td>
+                            {{ $data->scholarship_quota ?? '' }}
+                        </td>
+                        @endif
                         <td>
                             {{ $data->sex ?? '' }}
                         </td>
