@@ -931,10 +931,10 @@
             $("#faculties").change(function() {
                 //
                 var selected_id = $(this).val();
-                if(selected_id == 7) {
-                    $("#levels").empty();
-                    $("#levels").append("<option value=''>Sorry registration has been closed for Faculty of Agriculture...</option>");
-                } else {
+                // if(selected_id == 7) {
+                //     $("#levels").empty();
+                //     $("#levels").append("<option value=''>Sorry registration has been closed for Faculty of Agriculture...</option>");
+                // } else {
                     
                     $.ajax({
                         cache: false
@@ -959,7 +959,7 @@
                             }
                         }
                     });   
-                }
+                // }
             });
 
             // if changes is made on level selection
@@ -1162,9 +1162,9 @@
                         $('.quotas').append(`
                             <div class="full_paying_quotas" style="overflow-x: auto; margin: 2rem;">
                                 <p style="font-style:italic">If 'Full Paying' category, please choose a suitable option below (select any one):</p>
-                                <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="government_inclusion" value="government_inclusion" required>Government Inclusion </label>
+                                {{-- <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="government_inclusion" value="government_inclusion" required>Government Inclusion </label> --}}
                                 <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="karnali_province" value="karnali_province">Karnali province </label>
-                                <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="sponsorship" value="sponsorship">Sponsorship </label>
+                                {{-- <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="sponsorship" value="sponsorship">Sponsorship </label> --}}
                                 <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="foreign_citizen" value="foreign_citizen">Foreign Citizen </label>
                                 <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="free_open_category" value="free_open_category">Free Open Category </label>
                             </div>
@@ -1177,11 +1177,13 @@
                         $('.quotas').append(`
                             <div class="scholarship_quotas" style="overflow-x: auto; margin: 2rem;">
                                 <p style="font-style:italic">If 'Scholarship' category, please choose a suitable option below (select any one):</p>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="female" value="female" required>Female </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="dalit" value="dalit">Dalit </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="janajati" value="janajati">Janajati </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="remote_district" value="remote_district">Remote District </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="backward_society" value="backward_society">Backward Society </label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="government_inclusion" value="government_inclusion" required>Government Inclusion </label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="sponsorship" value="sponsorship">Entrance Merit Scholarship </label>
+                                {{--<label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="female" value="female" required>Female </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="dalit" value="dalit">Dalit </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="janajati" value="janajati">Janajati </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="remote_district" value="remote_district">Remote District </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="backward_society" value="backward_society">Backward Society </label>--}}
                             </div>
                         `);
                     } else {
@@ -1190,23 +1192,42 @@
                 }
             });
 
-            $(document).on('change','.full_paying_quota', function() {
-                var full_paying_quota = $(this).attr('id');
+            $(document).on('change','.scholarship_quota', function() {
+                var scholarship_quota = $(this).attr('id');
+                if(scholarship_quota === "government_inclusion") {
                     if ($('#government_inclusion').is(':checked')) {
-                        $('.full_paying_quotas').append(`
+                        $('.merit').remove();
+                        $('.scholarship_quotas').append(`
                             <div class="government_inclusions" style="overflow-x: auto; margin: 2rem;">
-                                <p style="font-style:italic">If 'Full Paying and Government Inclusion' category, please choose a suitable option below (select any one):</p>
+                                <p style="font-style:italic">If 'Scholarship and Government Inclusion' category, please choose a suitable option below (select any one):</p>
                                 <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="female" value="female" required>Female </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="dalit" value="dalit">Dalit </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="janajati" value="janajati">Janajati </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="janajati" value="janajati">Janajati / Adibasi  </label>
                                 <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="terai" value="terai">Tarai/Madhesi </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="remote_district" value="remote_district">Remote District </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="backward_society" value="backward_society">Backward Society </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="dalit" value="dalit">Dalit </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="backward_society" value="backward_society">Disable </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="remote_district" value="remote_district">Remote Area </label>
                             </div>
                         `);
                     } else {
                         $('.government_inclusions').remove();
                     }
+                }
+                else if(scholarship_quota === "sponsorship") {
+                    if ($('#sponsorship').is(':checked')) {
+                        $('.government_inclusions').remove();
+                        $('.scholarship_quotas').append(`
+                            <div class="merit" style="overflow-x: auto; margin: 2rem;">
+                                <p style="font-style:italic">If 'Scholarship and Entrance Merit Scholarship' category, please choose a suitable option below (select any one):</p>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="merit1" value="merit1" required>Entrance Merit No: 1 </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="merit2" value="merit2">Entrance Merit No: 2 </label>
+                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="merit3" value="merit3">Entrance Merit No: 3 </label>
+                                
+                            </div>
+                        `);
+                    } else {
+                        $('.merit').remove();
+                    }
+                }
             });
 
             // if changes is made on programs selection
