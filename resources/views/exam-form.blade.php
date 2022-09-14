@@ -1177,7 +1177,7 @@
                         $('.quotas').append(`
                             <div class="scholarship_quotas" style="overflow-x: auto; margin: 2rem;">
                                 <p style="font-style:italic">If 'Scholarship' category, please choose a suitable option below (select any one):</p>
-                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="government_inclusion" value="government_inclusion" required>Government Inclusion </label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="government_inclusion" value="government_inclusion" required>Government Inclusion Scholarship</label>
                                 <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="sponsorship" value="sponsorship">Entrance Merit Scholarship </label>
                                 {{--<label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="female" value="female" required>Female </label>
                                 <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="dalit" value="dalit">Dalit </label>

@@ -31,7 +31,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 header-image">
-                    <img src="{{asset('MWU top.png') }}" alt="" width="100%">
+                    <img src="{{asset('MWU-top.png') }}" alt="" width="100%">
                 </div>
             </div>
         </div>
