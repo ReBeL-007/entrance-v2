@@ -295,7 +295,7 @@ class FormController extends Controller
             'level' => $request->level,
             'programs' => $request->programs,
             'exam_centre' => $request->exam_centre,
-            // 'year' => $request->year,
+            'year' => \Carbon\Carbon::now()->format('Y'),
             // 'form_serial_no' => $request->year,
             'sex' => $request->sex,
             'fname' => $request->fname,

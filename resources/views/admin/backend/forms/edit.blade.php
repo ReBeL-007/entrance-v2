@@ -299,7 +299,7 @@
                         <div class="full_paying_quotas" style="overflow-x: auto; margin: 2rem;">
                             <p style="font-style:italic">If 'Full Paying' category, please choose a suitable option below (select any one):</p>
                             <!-- <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="government_inclusion" value="government_inclusion" {{($data->full_paying_quota=='government_inclusion')?'checked':''}} required>Government Inclusion </label> -->
-                            <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="karnali_province" value="karnali_province" {{($data->full_paying_quota=='karnali_province')?'checked':''}}>Karnali province </label>
+                            <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="karnali_province" value="karnali_province" {{($data->full_paying_quota=='karnali_province')?'checked':''}} required>Karnali province </label>
                             <!-- <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="sponsorship" value="sponsorship" {{($data->full_paying_quota=='sponsorship')?'checked':''}}>Sponsorship </label> -->
                             <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="foreign_citizen" value="foreign_citizen" {{($data->full_paying_quota=='foreign_citizen')?'checked':''}}>Foreign Citizen </label>
                             <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="free_open_category" value="free_open_category" {{($data->full_paying_quota=='free_open_category')?'checked':''}}>Free Open Category </label>
@@ -1040,7 +1040,7 @@
                         <div class="full_paying_quotas" style="overflow-x: auto; margin: 2rem;">
                             <p style="font-style:italic">If 'Full Paying' category, please choose a suitable option below (select any one):</p>
                             {{--<label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="government_inclusion" value="government_inclusion" required>Government Inclusion </label>--}}
-                            <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="karnali_province" value="karnali_province">Karnali province </label>
+                            <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="karnali_province" value="karnali_province" required>Karnali province </label>
                             {{--<label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="sponsorship" value="sponsorship">Sponsorship </label>--}}
                             <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="foreign_citizen" value="foreign_citizen">Foreign Citizen </label>
                             <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="free_open_category" value="free_open_category">Free Open Category </label>

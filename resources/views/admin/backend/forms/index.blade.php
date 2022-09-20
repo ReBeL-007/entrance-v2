@@ -28,10 +28,17 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label>Filter by District</label>
                     <select class="semester form-control">
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Filter by Year</label>
+                    <select class="year form-control">
                     </select>
                 </div>
             </div>
@@ -60,6 +67,9 @@
                         </th>
                         <th>
                             District
+                        </th>
+                        <th>
+                            Year
                         </th>
                         <th>
                             Email
@@ -147,6 +157,9 @@
                          </td>
                         <td>
                             {{ $data->district ?? '' }}
+                        </td>
+                        <td>
+                            {{ $data->year ?? '' }}
                         </td>
                         <td>
                             {{ $data->contact_address ?? '' }}
@@ -338,35 +351,53 @@
             $college = $('.college').val();
             $department = $('.department').val();
             $semester = $('.semester').val();
+            $rear = $('.year').val();
             $dataTable = $('.datatable-form').DataTable().column(4).search($('.college').val()).draw();
             searchOption();
             $('.college').val($college).trigger('selected');
             $('.department').val($department).trigger('selected');
             $('.semester').val($semester).trigger('selected');
+            $('.year').val($year).trigger('selected');
         });
 
         $('.department').on('change', function() {
             $college = $('.college').val();
             $department = $('.department').val();
             $semester = $('.semester').val();
+            $rear = $('.year').val();
             $dataTable = $('.datatable-form').DataTable().column(5).search($('.department').val()).draw();
             searchOption();
             $('.college').val($college).trigger('selected');
             $('.department').val($department).trigger('selected');
             $('.semester').val($semester).trigger('selected');
+            $('.year').val($year).trigger('selected');
         });
 
         $('.semester').on('change', function() {
             $college = $('.college').val();
             $department = $('.department').val();
             $semester = $('.semester').val();
+            $rear = $('.year').val();
             $dataTable = $('.datatable-form').DataTable().column(6).search($('.semester').val()).draw();
             searchOption();
             $('.college').val($college).trigger('selected');
             $('.department').val($department).trigger('selected');
             $('.semester').val($semester).trigger('selected');
+            $('.year').val($year).trigger('selected');
         });
 
+        $('.year').on('change', function() {
+            $college = $('.college').val();
+            $department = $('.department').val();
+            $semester = $('.semester').val();
+            $rear = $('.year').val();
+            $dataTable = $('.datatable-form').DataTable().column(7).search($('.year').val()).draw();
+            searchOption();
+            $('.college').val($college).trigger('selected');
+            $('.department').val($department).trigger('selected');
+            $('.semester').val($semester).trigger('selected');
+            $('.year').val($year).trigger('selected');
+        });
 
         $(document).on('click', '.admit-card', function() {
             $('.admit-cards').html('');
@@ -524,6 +555,10 @@
         $('.semester').html('<option value="">Select District</option>');
         $.each($dataTable.column(6).data().unique(), function(i, ele) {
             $('.semester').append('<option value="' + ele + '">' + ele + '</option>');
+        });
+        $('.year').html('<option value="">Select Year</option>');
+        $.each($dataTable.column(7).data().unique(), function(i, ele) {
+            $('.year').append('<option value="' + ele + '">' + ele + '</option>');
         });
     }
 

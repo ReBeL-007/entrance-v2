@@ -57,7 +57,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12 header-image">
-                    <img src="{{asset('MWU top.png') }}" style="width:100%" alt="">
+                    <img src="{{asset('MWU-top.png') }}" style="width:100%" alt="">
                 </div>
             </div>
 
@@ -333,34 +333,48 @@
 
                     @if(isset($quota) && $quota[0]=='full_paying')
                         <div class="full_paying_quotas" style="overflow-x: auto; margin: 2rem;">
-                            <p style="font-style:italic">If 'Full Paying' category, please choose a suitable option below (select any one):</p>
-                            <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="government_inclusion" value="government_inclusion" {{($data->full_paying_quota=='government_inclusion')?'checked':''}} required>Government Inclusion </label>
-                            <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="karnali_province" value="karnali_province" {{($data->full_paying_quota=='karnali_province')?'checked':''}}>Karnali province </label>
-                            <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="sponsorship" value="sponsorship" {{($data->full_paying_quota=='sponsorship')?'checked':''}}>Sponsorship </label>
+                        <p style="font-style:italic">If 'Full Paying' category, please choose a suitable option below (select any one):</p>
+                            <!-- <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="government_inclusion" value="government_inclusion" {{($data->full_paying_quota=='government_inclusion')?'checked':''}} required>Government Inclusion </label> -->
+                            <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="karnali_province" value="karnali_province" {{($data->full_paying_quota=='karnali_province')?'checked':''}} required>Karnali province </label>
+                            <!-- <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="sponsorship" value="sponsorship" {{($data->full_paying_quota=='sponsorship')?'checked':''}}>Sponsorship </label> -->
                             <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="foreign_citizen" value="foreign_citizen" {{($data->full_paying_quota=='foreign_citizen')?'checked':''}}>Foreign Citizen </label>
                             <label class="d-flex align-items-center"> <input type="radio" class="full_paying_quota" name="full_paying_quota" id="free_open_category" value="free_open_category" {{($data->full_paying_quota=='free_open_category')?'checked':''}}>Free Open Category </label>
                         </div>
 
-                        @if($data->full_paying_quota=='government_inclusion')
-                            <div class="government_inclusions" style="overflow-x: auto; margin: 2rem;">
-                                <p style="font-style:italic">If 'Full Paying and Government Inclusion' category, please choose a suitable option below (select any one):</p>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="female" value="female" {{($data->gov_inclusion_quota=='female')?'checked':''}} required>Female </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="dalit" value="dalit" {{($data->gov_inclusion_quota=='dalit')?'checked':''}}>Dalit </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="janajati" value="janajati" {{($data->gov_inclusion_quota=='janajati')?'checked':''}}>Janajati </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="terai" value="terai" {{($data->gov_inclusion_quota=='terai')?'checked':''}}>Tarai/Madhesi </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="remote_district" value="remote_district" {{($data->gov_inclusion_quota=='remote_district')?'checked':''}}>Remote District </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="backward_society" value="backward_society" {{($data->gov_inclusion_quota=='backward_society')?'checked':''}}>Backward Society </label>
-                            </div>
-                        @endif
                     @endif
                     @if(isset($quota[1]) && $quota[1]=='scholarship')
                         <div class="scholarship_quotas" style="overflow-x: auto; margin: 2rem;">
                             <p style="font-style:italic">If 'Scholarship' category, please choose a suitable option below (select any one):</p>
-                            <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="female" value="female" {{($data->scholarship_quota=='female')?'checked':''}} required>Female </label>
+                            
+                            @if($data->gov_inclusion_quota)
+                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="government_inclusion" value="government_inclusion" required checked>Government Inclusion Scholarship</label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="sponsorship" value="sponsorship">Entrance Merit Scholarship </label>
+                                <div class="government_inclusions" style="overflow-x: auto; margin: 2rem;">
+                                    <p style="font-style:italic">If 'Scholarship and Government Inclusion' category, please choose a suitable option below (select any one):</p>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="female" value="female" {{($data->gov_inclusion_quota=='female')?'checked':''}} required>Female </label>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="dalit" value="dalit" {{($data->gov_inclusion_quota=='dalit')?'checked':''}}>Dalit </label>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="janajati" value="janajati" {{($data->gov_inclusion_quota=='janajati')?'checked':''}}>Janajati </label>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="terai" value="terai" {{($data->gov_inclusion_quota=='terai')?'checked':''}}>Tarai/Madhesi </label>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="remote_district" value="remote_district" {{($data->gov_inclusion_quota=='remote_district')?'checked':''}}>Remote District </label>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="gov_inclusion_quota" id="backward_society" value="backward_society" {{($data->gov_inclusion_quota=='backward_society')?'checked':''}}>Backward Society </label>
+                                </div>
+                            @elseif($data->scholarship_quota)
+                            <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="government_inclusion" value="government_inclusion" required>Government Inclusion Scholarship</label>
+                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="sponsorship" value="sponsorship" checked>Entrance Merit Scholarship </label>
+                                <div class="merit" style="overflow-x: auto; margin: 2rem;">
+                                    <p style="font-style:italic">If 'Scholarship and Entrance Merit Scholarship' category, please choose a suitable option below (select any one):</p>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="merit1" value="merit1" {{($data->scholarship_quota=='merit1')?'checked':''}} required>Entrance Merit No: 1 </label>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="merit2" value="merit2" {{($data->scholarship_quota=='merit2')?'checked':''}}>Entrance Merit No: 2 </label>
+                                    <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="merit3" value="merit3" {{($data->scholarship_quota=='merit3')?'checked':''}}>Entrance Merit No: 3 </label>
+                                    
+                                </div>
+                           @endif 
+
+                            <!-- <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="female" value="female" {{($data->scholarship_quota=='female')?'checked':''}} required>Female </label>
                             <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="dalit" value="dalit" {{($data->scholarship_quota=='dalit')?'checked':''}}>Dalit </label>
                             <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="janajati" value="janajati" {{($data->scholarship_quota=='janajati')?'checked':''}}>Janajati </label>
                             <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="remote_district" value="remote_district" {{($data->scholarship_quota=='remote_district')?'checked':''}}>Remote District </label>
-                            <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="backward_society" value="backward_society" {{($data->scholarship_quota=='backward_society')?'checked':''}}>Backward Society </label>
+                            <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="backward_society" value="backward_society" {{($data->scholarship_quota=='backward_society')?'checked':''}}>Backward Society </label> -->
                         </div>
                     @endif
                 @else
