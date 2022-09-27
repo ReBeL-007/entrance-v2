@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 @if($data->faculty===5 && $data->level===1)
-                {{--@php
+                @php
                 $priority = json_decode($data->priority);
                 @endphp
                 <div class="priority">
@@ -114,13 +114,13 @@
                         <thead>
                         <tr>
                             <th scope="col" colspan="3" style="text-align: center">
-                            Scholarships
+                            Scholarship
                             </th>
                             <th scope="col" colspan="3" style="text-align: center">
                             Full Paying
                             </th>
                             <th scope="col" colspan="3" style="text-align: center">
-                            Sponsered
+                            Sponsorship
                             </th>
                         </tr>
                         <tr class="table-heading-row">
@@ -173,20 +173,20 @@
                         <tbody>
                         <tr>
                             <th>Number</th>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[0]}}"  required></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[1]}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[2]}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[3]}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[4]}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[5]}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[6]}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[7]}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority[8]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[0]}}"  required></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[1]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[2]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[3]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[4]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[5]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[6]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[7]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[8]}}" ></td>
                         </tr>
                         </tbody>
                     </table>
                     </div>
-                </div>--}}
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                     <p> . I have included all my credentials and information required for appearing in the examinations.</p>

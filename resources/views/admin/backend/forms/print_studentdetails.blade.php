@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 @if($data->faculty===5 && $data->level===1)
-                {{--@php
+                @php
                 $priority = json_decode($data->priority);
                 @endphp
                 <div class="priority">
@@ -221,7 +221,7 @@
                         </tbody>
                     </table>
                     </div>
-                </div>--}}
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                     <p> . I have included all my credentials and information required for appearing in the examinations.</p>

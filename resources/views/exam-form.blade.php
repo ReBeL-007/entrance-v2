@@ -1007,64 +1007,87 @@
                 else if(faculty_id==5 && selected_id==1) { 
                     $(".priority").remove();
                     $(".quotas").remove();
-                    // $(".engineer").append(`<div class="priority">
-                    //                         <div class="" style="overflow-x: auto; margin: 2rem;">
-                    //                         <h5 style="font-weight: bold">Priority</h5>
-                    //                         <table class="table table-bordered">
-                    //                             <thead>
-                    //                             <tr>
-                                                    
-                    //                                 <th scope="col" colspan="3" style="text-align: center">
-                    //                                 Full Paying
-                    //                                 </th>
-                    //                             </tr>
-                    //                             <tr class="table-heading-row">
-                    //                                 <th scope="col">Civil</th>
-                    //                                 <th scope="col">Computer</th>
-                    //                                 <th scope="col">Hydropower</th>
-                    //                             </tr>
-                    //                             </thead>
-                    //                             <tbody>
-                    //                             <tr>
-                    //                                 <td>4</td>
-                    //                                 <td>5</td>
-                    //                                 <td>6</td>
-                    //                             </tr>
-                    //                             </tbody>
-                    //                         </table>
-                    //                         </div>
+                    $(".engineer").append(`<div class="priority">
+                                            <div class="" style="overflow-x: auto; margin: 2rem;">
+                                            <h5 style="font-weight: bold">Priority</h5>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col" colspan="3" style="text-align: center">
+                                                        Scholarship
+                                                    </th>
+                                                    <th scope="col" colspan="3" style="text-align: center">
+                                                        Full Paying
+                                                    </th>
+                                                    <th scope="col" colspan="3" style="text-align: center">
+                                                        Sponsorship
+                                                    </th>
+                                                </tr>
+                                                <tr class="table-heading-row">
+                                                    <th scope="col">Civil</th>
+                                                    <th scope="col">Computer</th>
+                                                    <th scope="col">Hydropower</th>
+                                                    <th scope="col">Civil</th>
+                                                    <th scope="col">Computer</th>
+                                                    <th scope="col">Hydropower</th>
+                                                    <th scope="col">Civil</th>
+                                                    <th scope="col">Computer</th>
+                                                    <th scope="col">Hydropower</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td>7</td>
+                                                    <td>8</td>
+                                                    <td>9</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
 
-                    //                         <div class="" style="overflow-x: auto; margin: 2rem; max-width: 100%;">
-                    //                         <h5 style="font-weight: bold">Fill The Priority</h5>
-                    //                         <table class="table table-bordered ">
-                    //                             <thead>
-                    //                             <tr>
-                    //                                 <tr class="table-heading-row">
-                    //                                 <th></th>
-                    //                                 <th>P-1</th>
-                    //                                 <th>P-2</th>
-                    //                                 <th>P-3</th>
-                    //                                 </tr>
-                    //                             </tr>
-                    //                             </thead>
-                    //                             <tbody>
-                    //                             <tr>
-                    //                                 <th>Number</th>
-                    //                                 <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9"  required></td>
-                    //                                 <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                    //                                 <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                    //                                 <td class="d-none"><input type="hidden" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                    //                                 <td class="d-none"><input type="hidden" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                    //                                 <td class="d-none"><input type="hidden" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                    //                                 <td class="d-none"><input type="hidden" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                    //                                 <td class="d-none"><input type="hidden" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                    //                                 <td class="d-none"><input type="hidden" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                    //                             </tr>
-                    //                             </tbody>
-                    //                         </table>
-                    //                         </div>
-                    //                     </div>
-                    //             `);
+                                            <div class="" style="overflow-x: auto; margin: 2rem; max-width: 100%;">
+                                            <h5 style="font-weight: bold">Fill The Priority</h5>
+                                            <table class="table table-bordered ">
+                                                <thead>
+                                                <tr>
+                                                    <tr class="table-heading-row">
+                                                    <th></th>
+                                                    <th>P-1</th>
+                                                    <th>P-2</th>
+                                                    <th>P-3</th>
+                                                    <th>P-4</th>
+                                                    <th>P-5</th>
+                                                    <th>P-6</th>
+                                                    <th>P-7</th>
+                                                    <th>P-8</th>
+                                                    <th>P-9</th>
+                                                    </tr>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th>Number</th>
+                                                    <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9"  required></td>
+                                                    <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                        </div>
+                                `);
                     $(".hide-for-engineer").hide(); 
                     $("#programs").removeAttr("required")                             
                 } else if(faculty_id==5 && selected_id==2) { 

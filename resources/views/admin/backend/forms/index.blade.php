@@ -351,7 +351,7 @@
             $college = $('.college').val();
             $department = $('.department').val();
             $semester = $('.semester').val();
-            $rear = $('.year').val();
+            $year = $('.year').val();
             $dataTable = $('.datatable-form').DataTable().column(4).search($('.college').val()).draw();
             searchOption();
             $('.college').val($college).trigger('selected');
@@ -364,7 +364,7 @@
             $college = $('.college').val();
             $department = $('.department').val();
             $semester = $('.semester').val();
-            $rear = $('.year').val();
+            $year = $('.year').val();
             $dataTable = $('.datatable-form').DataTable().column(5).search($('.department').val()).draw();
             searchOption();
             $('.college').val($college).trigger('selected');
@@ -377,7 +377,7 @@
             $college = $('.college').val();
             $department = $('.department').val();
             $semester = $('.semester').val();
-            $rear = $('.year').val();
+            $year = $('.year').val();
             $dataTable = $('.datatable-form').DataTable().column(6).search($('.semester').val()).draw();
             searchOption();
             $('.college').val($college).trigger('selected');
@@ -390,7 +390,7 @@
             $college = $('.college').val();
             $department = $('.department').val();
             $semester = $('.semester').val();
-            $rear = $('.year').val();
+            $year = $('.year').val();
             $dataTable = $('.datatable-form').DataTable().column(7).search($('.year').val()).draw();
             searchOption();
             $('.college').val($college).trigger('selected');
