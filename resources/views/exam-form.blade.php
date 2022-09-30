@@ -999,7 +999,7 @@
                     $(".faculty-agriculture").append(`
                                             <div class="quotas" style="overflow-x: auto; margin: 2rem;">
                                                 <p style="font-style:italic">Category of applicant (Select any one or both):</p>
-                                                  <label class="d-flex align-items-center"><input type="checkbox" class="quota" name="quota[]" id="full_paying_quota" value="full_paying" required>Full Paying</label>
+                                                  <label class="d-flex align-items-center"><input type="checkbox" class="quota" name="quota[]" id="full_paying_quota" value="full_paying">Full Paying</label>
                                                   <label class="d-flex align-items-center"><input type="checkbox" class="quota" name="quota[]" id="scholarship_quota" value="scholarship">Scholarship</label>
                                             </div>
                                 `);
@@ -1085,6 +1085,16 @@
                                                 </tr>
                                                 </tbody>
                                             </table>
+                                            </div>
+
+                                            <div class="government_inclusions" style="overflow-x: auto; margin: 2rem;">
+                                                <p style="font-style:italic">Do you want to apply for the inclusive (Samabesi) quota ? If yes, please tick (multiple possible):</p>
+                                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="female" value="female" >Female </label>
+                                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="janajati" value="janajati">Janajati / Adibasi  </label>
+                                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="terai" value="terai">Tarai/Madhesi </label>
+                                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="dalit" value="dalit">Dalit </label>
+                                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="backward_society" value="backward_society">Disable </label>
+                                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="remote_district" value="remote_district">Remote Area </label>
                                             </div>
                                         </div>
                                 `);
@@ -1199,14 +1209,16 @@
                     if ($('#scholarship_quota').is(':checked')) {
                         $('.quotas').append(`
                             <div class="scholarship_quotas" style="overflow-x: auto; margin: 2rem;">
-                                <p style="font-style:italic">If 'Scholarship' category, please choose a suitable option below (select any one):</p>
-                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="government_inclusion" value="government_inclusion" required>Government Inclusion Scholarship</label>
-                                <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="sponsorship" value="sponsorship">Entrance Merit Scholarship </label>
-                                {{--<label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="female" value="female" required>Female </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="dalit" value="dalit">Dalit </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="janajati" value="janajati">Janajati </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="remote_district" value="remote_district">Remote District </label>
-                                <label class="d-flex align-items-center"> <input type="radio" name="scholarship" id="backward_society" value="backward_society">Backward Society </label>--}}
+                                <p style="font-style:italic">If Government Inclusion Scholarship, please choose suitable options below ( You can choose multiple options ):</p>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="female" value="female">Female </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="janajati" value="janajati">Janajati / Adibasi  </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="terai" value="terai">Tarai/Madhesi </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="dalit" value="dalit">Dalit </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="backward_society" value="backward_society">Disable </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="remote_district" value="remote_district">Remote Area </label>
+
+
+                        
                             </div>
                         `);
                     } else {

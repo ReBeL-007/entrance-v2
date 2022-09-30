@@ -106,6 +106,8 @@
                 @if($data->faculty===5 && $data->level===1)
                 @php
                 $priority = json_decode($data->priority);
+                $gov_inclusion_quota = json_decode($data->gov_inclusion_quota);
+                
                 @endphp
                 <div class="priority">
                     <div class="" style="overflow-x: auto; margin: 2rem;">
@@ -186,6 +188,15 @@
                         </tbody>
                     </table>
                     </div>
+                </div>
+                <div class="government_inclusions" style="overflow-x: auto; margin: 2rem;">
+                    <p style="font-style:italic">Do you want to apply for the inclusive (Samabesi) quota ? If yes, please tick (multiple possible):</p>
+                    <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="female" value="female" {{(isset($gov_inclusion_quota) && $gov_inclusion_quota[0]=='female')?'checked':''}} >Female </label>
+                    <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="janajati" value="janajati" {{(isset($gov_inclusion_quota[1]) && $gov_inclusion_quota[1]=='janajati')?'checked':''}}>Janajati / Adibasi  </label>
+                    <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="terai" value="terai" {{(isset($gov_inclusion_quota[2]) && $gov_inclusion_quota[2]=='terai')?'checked':''}}>Tarai/Madhesi </label>
+                    <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="dalit" value="dalit" {{(isset($gov_inclusion_quota[3]) && $gov_inclusion_quota[3]=='dalit')?'checked':''}}>Dalit </label>
+                    <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="backward_society" value="backward_society" {{(isset($gov_inclusion_quota[4]) && $gov_inclusion_quota[4]=='backward_society')?'checked':''}}>Disable </label>
+                    <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="remote_district" value="remote_district" {{(isset($gov_inclusion_quota[5]) && $gov_inclusion_quota[5]=='remote_district')?'checked':''}}>Remote Area </label>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -272,6 +283,7 @@
                 @elseif($data->faculty===7 && $data->level===1)
                 @php
                 $quota = json_decode($data->quota);
+                $gov_inclusion_quota = json_decode($data->gov_inclusion_quota);
                 @endphp
                     <div class="row">
                         <div class="col-md-1">
@@ -308,9 +320,19 @@
                     @endif
                     @if(isset($quota[1]) && $quota[1]=='scholarship')
                         <div class="scholarship_quotas" style="overflow-x: auto; margin: 2rem;">
-                            <p style="font-style:italic">If 'Scholarship' category, please choose a suitable option below (select any one):</p>
-                            
-                            @if($data->gov_inclusion_quota)
+                            <div class="scholarship_quotas" style="overflow-x: auto; margin: 2rem;">
+                                <p style="font-style:italic">If Government Inclusion Scholarship, please choose suitable options below ( You can choose multiple options ):</p>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="female" value="female" {{(isset($gov_inclusion_quota) && in_array('female',$gov_inclusion_quota)) ? 'checked':''}}>Female </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="janajati" value="janajati" {{(isset($gov_inclusion_quota) && in_array('janajati',$gov_inclusion_quota)) ?'checked':''}}>Janajati / Adibasi  </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="terai" value="terai" {{(isset($gov_inclusion_quota) && in_array('terai',$gov_inclusion_quota)) ?'checked':''}}>Tarai/Madhesi </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="dalit" value="dalit" {{(isset($gov_inclusion_quota) && in_array('dalit',$gov_inclusion_quota)) ?'checked':''}}>Dalit </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="backward_society" value="backward_society" {{(isset($gov_inclusion_quota) && in_array('backward_society',$gov_inclusion_quota)) ?'checked':''}}>Disable </label>
+                                <label class="d-flex align-items-center"> <input type="checkbox" name="gov_inclusion_quota[]" id="remote_district" value="remote_district" {{(isset($gov_inclusion_quota) && in_array('remote_district',$gov_inclusion_quota)) ?'checked':''}}>Remote Area </label>
+
+
+                        
+                            </div>
+                            <!-- @if($data->gov_inclusion_quota)
                                 <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="government_inclusion" value="government_inclusion" required checked>Government Inclusion Scholarship</label>
                                 <label class="d-flex align-items-center"> <input type="radio" class="scholarship_quota" name="scholarship" id="sponsorship" value="sponsorship">Entrance Merit Scholarship </label>
                                 <div class="government_inclusions" style="overflow-x: auto; margin: 2rem;">
@@ -332,7 +354,7 @@
                                     <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="merit3" value="merit3" {{($data->scholarship_quota=='merit3')?'checked':''}}>Entrance Merit No: 3 </label>
                                     
                                 </div>
-                           @endif 
+                           @endif  -->
 
                             <!-- <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="female" value="female" {{($data->scholarship_quota=='female')?'checked':''}} required>Female </label>
                             <label class="d-flex align-items-center"> <input type="radio" name="scholarship_quota" id="dalit" value="dalit" {{($data->scholarship_quota=='dalit')?'checked':''}}>Dalit </label>
