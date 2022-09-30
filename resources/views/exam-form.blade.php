@@ -1019,9 +1019,9 @@
                                                     <th scope="col" colspan="3" style="text-align: center">
                                                         Full Paying
                                                     </th>
-                                                    <th scope="col" colspan="3" style="text-align: center">
+                                                    {{--<th scope="col" colspan="3" style="text-align: center">
                                                         Sponsorship
-                                                    </th>
+                                                    </th>--}}
                                                 </tr>
                                                 <tr class="table-heading-row">
                                                     <th scope="col">Civil</th>
@@ -1030,9 +1030,9 @@
                                                     <th scope="col">Civil</th>
                                                     <th scope="col">Computer</th>
                                                     <th scope="col">Hydropower</th>
-                                                    <th scope="col">Civil</th>
+                                                    {{--<th scope="col">Civil</th>
                                                     <th scope="col">Computer</th>
-                                                    <th scope="col">Hydropower</th>
+                                                    <th scope="col">Hydropower</th>--}}
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -1043,9 +1043,9 @@
                                                     <td>4</td>
                                                     <td>5</td>
                                                     <td>6</td>
-                                                    <td>7</td>
+                                                    {{--<td>7</td>
                                                     <td>8</td>
-                                                    <td>9</td>
+                                                    <td>9</td>--}}
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -1064,9 +1064,9 @@
                                                     <th>P-4</th>
                                                     <th>P-5</th>
                                                     <th>P-6</th>
-                                                    <th>P-7</th>
+                                                    {{--<th>P-7</th>
                                                     <th>P-8</th>
-                                                    <th>P-9</th>
+                                                    <th>P-9</th>--}}
                                                     </tr>
                                                 </tr>
                                                 </thead>
@@ -1079,9 +1079,9 @@
                                                     <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
                                                     <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
                                                     <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    {{--<td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
                                                     <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
-                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>
+                                                    <td class=""><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1 min="1" max="9" ></td>--}}
                                                 </tr>
                                                 </tbody>
                                             </table>
