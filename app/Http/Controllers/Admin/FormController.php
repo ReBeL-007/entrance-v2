@@ -361,7 +361,7 @@ class FormController extends Controller
             'quota' => json_encode($request->quota),
             'full_paying_quota' => $request->full_paying_quota,
             'scholarship_quota' => $request->scholarship_quota,
-            'gov_inclusion_quota' => $request->gov_inclusion_quota,
+            'gov_inclusion_quota' => json_encode($request->gov_inclusion_quota),
         ];
         // dd($data);
         $form = Form::create($data
@@ -481,7 +481,7 @@ class FormController extends Controller
             'quota' => json_encode($request->quota),
             'full_paying_quota' => $request->full_paying_quota,
             'scholarship_quota' => $request->scholarship_quota,
-            'gov_inclusion_quota' => $request->gov_inclusion_quota,
+            'gov_inclusion_quota' => json_encode($request->gov_inclusion_quota),
         ];
         if($r=='User'){
             $data['is_verified'] = 1;
