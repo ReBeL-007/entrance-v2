@@ -931,10 +931,10 @@
             $("#faculties").change(function() {
                 //
                 var selected_id = $(this).val();
-                // if(selected_id == 7) {
-                //     $("#levels").empty();
-                //     $("#levels").append("<option value=''>Sorry registration has been closed for Faculty of Agriculture...</option>");
-                // } else {
+                if(selected_id == 5) {
+                    $("#levels").empty();
+                    $("#levels").append("<option value=''>Sorry registration has been closed...</option>");
+                } else {
                     
                     $.ajax({
                         cache: false
@@ -959,7 +959,7 @@
                             }
                         }
                     });   
-                // }
+                }
             });
 
             // if changes is made on level selection

@@ -103,7 +103,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12 header-image">
-                        <img src="{{asset('MWU Bottom.svg') }}" alt="">
+                        <!-- <img src="{{asset('MWU Bottom.svg') }}" alt=""> -->
                     </div>
                 </div>
             </div>

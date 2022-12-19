@@ -215,9 +215,9 @@
                             <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority?$priority[3]:''}}" ></td>
                             <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority?$priority[4]:''}}" ></td>
                             <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority?$priority[5]:''}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority?$priority[6]:''}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority?$priority[7]:''}}" ></td>
-                            <td><input type="number" name="priority[]" min="1" max="9" value="{{$priority?$priority[8]:''}}" ></td>
+                            <td><input type="number" name="priority[]" min="1" max="9" value="{{isset($priority[6])?$priority[6]:''}}" ></td>
+                            <td><input type="number" name="priority[]" min="1" max="9" value="{{isset($priority[7])?$priority[7]:''}}" ></td>
+                            <td><input type="number" name="priority[]" min="1" max="9" value="{{isset($priority[8])?$priority[8]:''}}" ></td>
                         </tr>
                         </tbody>
                     </table>

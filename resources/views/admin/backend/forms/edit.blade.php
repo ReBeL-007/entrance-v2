@@ -181,9 +181,9 @@
                             <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[3]}}" ></td>
                             <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[4]}}" ></td>
                             <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[5]}}" ></td>
-                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[6]}}" ></td>
-                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[7]}}" ></td>
-                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{$priority[8]}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{isset($priority[6])?$priority[6]:''}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{isset($priority[7])?$priority[7]:''}}" ></td>
+                            <td><input type="number" name="priority[]" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength=1  min="1" max="9" value="{{isset($priority[8])?$priority[8]:''}}" ></td>
                         </tr>
                         </tbody>
                     </table>
